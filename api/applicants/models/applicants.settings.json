@@ -1,0 +1,97 @@
+{
+  "kind": "collectionType",
+  "collectionName": "applicants",
+  "info": {
+    "name": "Applicants",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "survey": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "middleName": {
+      "type": "string"
+    },
+    "birthDate": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "messenger": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "workingAbroad": {
+      "type": "string"
+    },
+    "jobApplyingFor": {
+      "type": "string"
+    },
+    "registrationPurpose": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "licenseNumber": {
+      "type": "string"
+    },
+    "inquiryPurpose": {
+      "type": "text"
+    },
+    "pat": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "location": {
+      "type": "integer"
+    },
+    "source": {
+      "type": "integer"
+    },
+    "purpose": {
+      "type": "integer"
+    },
+    "acceptTerms": {
+      "type": "boolean"
+    },
+    "agreedToRecording": {
+      "type": "boolean"
+    },
+    "cv": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "trainingLocation": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "current_candidates",
+  "info": {
+    "name": "Current Candidates"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "reference": {
+      "type": "string"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Male",
+        "Female"
+      ]
+    },
+    "maritalstatus": {
+      "type": "enumeration",
+      "enum": [
+        "Single",
+        "Married",
+        "Separated",
+        "Divorced",
+        "Widowed"
+      ]
+    },
+    "education": {
+      "type": "text"
+    },
+    "specialization": {
+      "type": "string"
+    },
+    "experience_year": {
+      "type": "integer"
+    },
+    "experience_month": {
+      "type": "integer"
+    },
+    "certificates": {
+      "type": "text"
+    }
+  }
+}

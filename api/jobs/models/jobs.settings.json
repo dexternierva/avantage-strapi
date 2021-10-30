@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "name": "Jobs",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "qualifications": {
+      "type": "string"
+    },
+    "accreditationNumber": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "enumeration",
+      "enum": [
+        "FeaturedJob",
+        "Others"
+      ]
+    },
+    "featuredImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "details": {
+      "type": "richtext"
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "programs": {
+      "collection": "program",
+      "via": "job"
+    }
+  }
+}
