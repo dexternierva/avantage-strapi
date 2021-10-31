@@ -38,6 +38,7 @@ module.exports = ({ env }) => ({
           ca: env("DATABASE_CA", ""),
         },
       },
+      options: {},
     },
   },
 });
