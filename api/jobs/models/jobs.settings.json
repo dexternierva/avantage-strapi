@@ -18,9 +18,6 @@
     "companyName": {
       "type": "string"
     },
-    "qualifications": {
-      "type": "string"
-    },
     "accreditationNumber": {
       "type": "string"
     },
