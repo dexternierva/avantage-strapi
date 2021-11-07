@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "programs",
   "info": {
-    "name": "Program"
+    "name": "Program",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -16,9 +17,6 @@
     },
     "details": {
       "type": "richtext"
-    },
-    "excerpt": {
-      "type": "text"
     },
     "featuredImage": {
       "model": "file",
@@ -42,6 +40,9 @@
     "job": {
       "via": "programs",
       "model": "jobs"
+    },
+    "excerpt": {
+      "type": "text"
     }
   }
 }
