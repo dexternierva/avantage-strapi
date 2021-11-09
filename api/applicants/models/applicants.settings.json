@@ -63,9 +63,6 @@
     "region": {
       "type": "string"
     },
-    "location": {
-      "type": "integer"
-    },
     "source": {
       "type": "integer"
     },
@@ -85,7 +82,8 @@
         "files"
       ],
       "plugin": "upload",
-      "required": true
+      "required": true,
+      "pluginOptions": {}
     }
   }
 }
