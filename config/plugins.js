@@ -1,19 +1,15 @@
 module.exports = ({ env }) => ({
   email: {
-    provider: 'smtp',
+    provider: "mailjet",
     providerOptions: {
-      host: 'smtp.gmail.com', //SMTP Host
-      port: 587, //SMTP Port
-      secure: false,
-      username: env('SMTP_USERNAME'),
-      password: env('SMTP_PASSWORD'),
-      rejectUnauthorized: true,
-      requireTLS: true,
-      connectionTimeout: 1,
+      publicApiKey: env("MAILJET_PUBLIC_KEY"),
+      secretApiKey: env("MAILJET_SECRET_KEY"),
     },
     settings: {
-      from: 'leads@a-avantageinternational.com',
-      replyTo: 'leads@a-avantageinternational.com',
+      defaultFrom: "d.nierva@educar-consultancy.com",
+      defaultFromName: "Customer Support",
+      defaultTo: "d.nierva@educar-consultancy.com",
+      defaultToName: "Customer Support Notification",
     },
   },
 });
