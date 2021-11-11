@@ -7,7 +7,7 @@ module.exports = ({ env }) => ({
     },
     settings: {
       defaultFrom: "d.nierva@educar-consultancy.com",
-      defaultFromName: "Customer Support",
+      defaultFromName: "AVantage Customer Support",
       defaultTo: "d.nierva@educar-consultancy.com",
       defaultToName: "Customer Support Notification",
     },
