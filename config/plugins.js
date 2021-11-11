@@ -6,6 +6,7 @@ module.exports = ({ env }) => ({
       port: env('SMTP_PORT', 587),
       secure: false,
       auth: {
+        type: "login",
         user: env('SMTP_USERNAME'),
         pass: env('SMTP_PASSWORD'),
       },
