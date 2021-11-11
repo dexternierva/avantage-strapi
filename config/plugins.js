@@ -1,19 +1,19 @@
 module.exports = ({ env }) => ({
   email: {
-    provider: 'nodemailer',
+    provider: 'smtp',
     providerOptions: {
-      host: env('SMTP_HOST', 'smtp.gmail.com'),
-      port: env('SMTP_PORT', 587),
+      host: 'smtp.gmail.com', //SMTP Host
+      port: 587, //SMTP Port
       secure: false,
-      auth: {
-        type: "login",
-        user: env('SMTP_USERNAME'),
-        pass: env('SMTP_PASSWORD'),
-      },
+      username: env('SMTP_USERNAME'),
+      password: env('SMTP_PASSWORD'),
+      rejectUnauthorized: true,
+      requireTLS: true,
+      connectionTimeout: 1,
     },
     settings: {
-      defaultFrom: 'leads@a-avantageinternational.com',
-      defaultReplyTo: 'leads@a-avantageinternational.com',
+      from: 'leads@a-avantageinternational.com',
+      replyTo: 'leads@a-avantageinternational.com',
     },
   },
 });
