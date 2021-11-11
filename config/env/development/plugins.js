@@ -5,6 +5,7 @@ module.exports = ({ env }) => ({
       host: 'localhost',
       port: 1337,
       ignoreTLS: true,
+      ignoreSSL: true
     },
   },
 });
