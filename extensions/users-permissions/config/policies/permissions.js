@@ -11,12 +11,12 @@ module.exports = async (ctx, next) => {
   }
 
   /** START OF CUSTOMIZATION */
-  // if (ctx.request && ctx.request.header && !ctx.request.header.authorization) {
-  //   const token = ctx.cookies.get("token");
-  //   if (token) {
-  //     ctx.request.header.authorization = "Bearer " + token;
-  //   }
-  // }
+  if (ctx.request && ctx.request.header && !ctx.request.header.authorization) {
+    const token = ctx.cookies.get("token");
+    if (token) {
+      ctx.request.header.authorization = "Bearer " + token;
+    }
+  }
   /** END OF CUSTOMIZATION */
 
   if (ctx.request && ctx.request.header && ctx.request.header.authorization) {

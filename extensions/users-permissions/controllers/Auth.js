@@ -129,35 +129,36 @@ module.exports = {
         );
       } else {
         /** START OF CUSTOMIZATION */
-        ctx.send({
-          jwt: strapi.plugins['users-permissions'].services.jwt.issue({
-            id: user.id,
-          }),
-          user: sanitizeEntity(user.toJSON ? user.toJSON() : user, {
-            model: strapi.query('user', 'users-permissions').model,
-          }),
-        });
-        /** ___ */
-        // const token = strapi.plugins["users-permissions"].services.jwt.issue({
-        //   id: user.id,
-        // });
-
-        // ctx.cookies.set("token", token, {
-        //     httpOnly: true,
-        //     secure: process.env.NODE_ENV === "development" ? true : false,
-        //     maxAge: 1000 * 60 * 60 * 24 * 14, // 14 Day Age
-        //     domain: process.env.NODE_ENV === "development" ? "localhost" : process.env.PRODUCTION_URL,
-        //     sameSite: "none"
-        // });
-
         // ctx.send({
-        //   status: 'Authenticated',
+        //   jwt: strapi.plugins['users-permissions'].services.jwt.issue({
+        //     id: user.id,
+        //   }),
         //   user: sanitizeEntity(user.toJSON ? user.toJSON() : user, {
         //     model: strapi.query('user', 'users-permissions').model,
         //   }),
         // });
 
+        /** START OF CUSTOMIZATION */
+        const token = strapi.plugins["users-permissions"].services.jwt.issue({
+          id: user.id,
+        });
+
+        ctx.cookies.set("token", token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "development" ? true : false,
+            maxAge: 1000 * 60 * 60 * 24 * 14, // 14 Day Age
+            domain: "avantage-strapi-kptng.ondigitalocean.app",
+        });
+
+        ctx.send({
+          jwt: token,
+          status: 'Authenticated',
+          user: sanitizeEntity(user.toJSON ? user.toJSON() : user, {
+            model: strapi.query('user', 'users-permissions').model,
+          }),
+        });
         /** END OF CUSTOMIZATION */
+
       }
     } else {
       if (!_.get(await store.get({ key: 'grant' }), [provider, 'enabled'])) {
